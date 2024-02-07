@@ -12,7 +12,7 @@ class TableEntry:
 
 def get_table_entry(curr_line: str) -> TableEntry:
     comment = curr_line.split(" COMMENT ")[-1][:-1].replace("'", "")
-    name, data_type = curr_line.split(" COMMENT ")[0].split()
+    name, data_type = curr_line.split(" COMMENT ")[0].replace(", ", ",").split()
     return TableEntry(name, data_type, comment)
 
 
