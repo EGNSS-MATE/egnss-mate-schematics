@@ -10,7 +10,7 @@ Documentation of standards used in EGNSS MATE.
 
 ## Sensors
 
-<!--start_sensors-->
+<!--start_sensor-->
 
 ## Digital Map
 
@@ -18,4 +18,4 @@ Documentation of standards used in EGNSS MATE.
 
 ## Fusion Results
 
-<!--start_results-->
+<!--start_result-->
