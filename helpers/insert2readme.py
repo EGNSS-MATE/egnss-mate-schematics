@@ -55,7 +55,7 @@ Updated on {datetime.now().date()}, {datetime.now().time()}
         with open(readme_path, 'w') as file:
             file.write(modified_contents)
 
-        print(f'Successfully replaced "<!--start_{category}-->" in {readme_path}.')
+        print(f'Successfully replaced "<!--start_{category}-->" in {readme_path} for table {table_name}.')
 
     except FileNotFoundError:
         print(f'Error: File "{readme_path}" not found.')
@@ -83,7 +83,7 @@ def main():
 
     res = add_to_readme(sql_path=args.sql_path, readme_path=args.readme_path)
     if res:
-        print("Successfully")
+        print("Successful.")
     else:
         print("Something went wrong. Please try again.")
 
