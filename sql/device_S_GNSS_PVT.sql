@@ -29,3 +29,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_GNSS_PVT (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Standardization table for Global Positioning System position, velocity, time (GNSS-PVT)'
+;
