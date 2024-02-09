@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_ANTENNA (
 	VALID_TO TIMESTAMP_NTZ(6) COMMENT 'UTC date alid to'
 )
 COMMENT='Relationship between device antenna and train antenna'
+;
