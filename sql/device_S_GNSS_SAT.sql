@@ -22,3 +22,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_GNSS_SAT (
 	ANTENNA VARCHAR(16777216) COMMENT 'Antenna'
 )
 COMMENT='Standardization table for Global Positioning System satellite information'
+;
