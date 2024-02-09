@@ -42,3 +42,4 @@ CREATE TABLE IF NOT EXISTS TABLE R_GLOBAL (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Fusion Result - Global Coordinates'
+;
