@@ -9,7 +9,7 @@ Documentation of standards used in EGNSS MATE.
 <!--start_admin-->
 
 ### S_DEVICE
-Updated on 2024-02-07, 17:43:02.064399
+Updated on 2024-02-09, 14:10:28.829936
 
 #### Definition
 | Variable | Type | Comment |
@@ -32,7 +32,7 @@ Updated on 2024-02-07, 17:43:02.064399
 Parameters of the devices
 
 ### S_COORDINATE_SYSTEM
-Updated on 2024-02-07, 17:43:02.024224
+Updated on 2024-02-09, 14:10:28.786822
 
 #### Definition
 | Variable | Type | Comment |
@@ -50,7 +50,7 @@ Definitions of the coordinate systems
 <!--start_sensor-->
 
 ### S_IMU
-Updated on 2024-02-07, 17:43:02.306169
+Updated on 2024-02-09, 14:10:29.105412
 
 #### Definition
 | Variable | Type | Comment |
@@ -74,7 +74,7 @@ Updated on 2024-02-07, 17:43:02.306169
 Standardization table for Inertial Measurement Unit (IMU)
 
 ### S_GNSS_INTF
-Updated on 2024-02-07, 17:43:02.266096
+Updated on 2024-02-09, 14:10:29.060584
 
 #### Definition
 | Variable | Type | Comment |
@@ -103,7 +103,7 @@ Updated on 2024-02-07, 17:43:02.266096
 Standardization table for Global Positioning System interference data
 
 ### S_BALISEREADER
-Updated on 2024-02-07, 17:43:02.225390
+Updated on 2024-02-09, 14:10:29.015812
 
 #### Definition
 | Variable | Type | Comment |
@@ -126,7 +126,7 @@ Standardization table for balise reader
 <!--start_dm-->
 
 ### S_DM_TRACKPOINT
-Updated on 2024-02-07, 17:43:02.184725
+Updated on 2024-02-09, 14:10:28.970123
 
 #### Definition
 | Variable | Type | Comment |
@@ -152,7 +152,7 @@ Updated on 2024-02-07, 17:43:02.184725
 Standardization table for digital map track point
 
 ### S_DM_TRACK
-Updated on 2024-02-07, 17:43:02.144696
+Updated on 2024-02-09, 14:10:28.920687
 
 #### Definition
 | Variable | Type | Comment |
@@ -171,7 +171,7 @@ Updated on 2024-02-07, 17:43:02.144696
 Standardization table for digital map track
 
 ### S_DM_BALISE
-Updated on 2024-02-07, 17:43:02.104737
+Updated on 2024-02-09, 14:10:28.874815
 
 #### Definition
 | Variable | Type | Comment |
