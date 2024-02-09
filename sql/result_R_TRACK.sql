@@ -22,3 +22,4 @@ CREATE TABLE IF NOT EXISTS TABLE R_TRACK (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Fusion Result - Track Bound Coordinates'
+;
