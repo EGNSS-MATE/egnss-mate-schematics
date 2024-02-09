@@ -11,3 +11,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_DM_TRACK_LINEAR_ELEMENT (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Standardization table for digital map track as geometry object'
+;
