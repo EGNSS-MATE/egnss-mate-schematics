@@ -15,3 +15,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_DM_BALISE (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Standardization table for digital map balise'
+;
