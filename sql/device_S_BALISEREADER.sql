@@ -10,3 +10,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_BALISEREADER (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Standardization table for balise reader'
+;
