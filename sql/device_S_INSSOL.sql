@@ -41,3 +41,4 @@ CREATE TABLE IF NOT EXISTS TABLE S_INSSOL (
 	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
 )
 COMMENT='Standardization table for Inertial Solution (INSSOL)'
+;
