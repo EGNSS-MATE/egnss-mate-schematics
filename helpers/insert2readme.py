@@ -23,20 +23,44 @@ def get_table_from_sql(sql_path: str) -> tuple:
     for i in range(len(lines)):
         curr_line = lines[i].strip()
         if i == 0:
-            name = curr_line.split("CREATE TABLE IF NOT EXISTS ")[-1]
-        if 1 < i < len(lines) - 2:
+            name = curr_line.split("CREATE TABLE IF NOT EXISTS TABLE ")[-1][:-2]
+        if 0 < i < len(lines) - 3:
             cols.append(get_table_entry(curr_line))
-        if i == len(lines) - 1:
-            comment = curr_line.split("COMMENT = ")[-1].replace("'", "")
+        if i == len(lines) - 2:
+            comment = curr_line.split("=")[-1].replace("'", "")
     cat = sql_path.split(f"_{name}.sql")[0].split("/")[-1]
     return cat, name, cols, comment
 
 
+def entry_exists(tag: str, lines: list) -> bool:
+    for line in lines:
+        if line.rstrip() == f"<!--start_{tag}-->":
+            return True
+    return False
+
+
+def replace_existing_entry(tag: str, new_entry: str, file_contents: str, lines: list) -> str:
+    # get existing str
+    existing_str = ""
+    started = False
+    for line in lines:
+        if line.rstrip() == f"<!--start_{tag}-->":
+            started = True
+        elif line.rstrip() == f"<!--end_{tag}-->":
+            started = False
+            existing_str += line
+        if started:
+            existing_str += line
+    # replace string
+    return file_contents.replace(existing_str, new_entry)
+
+
 def write_to_readme(readme_path: str, category: str, table_name: str, columns: list, comment: str) -> bool:
-    new_entry = f"""<!--start_{category}-->
+    tag = table_name.lower()
+    new_entry = f"""<!--start_{tag}-->
 
 ### {table_name}
-Updated on {datetime.now().date()}, {datetime.now().time()}
+Updated on {datetime.now().date()}, {datetime.now().strftime("%H:%M:%S")}
 
 #### Definition
 | Variable | Type | Comment |
@@ -47,15 +71,28 @@ Updated on {datetime.now().date()}, {datetime.now().time()}
 
     new_entry += f"""
 #### Comment
-{comment}"""
+{comment}
+
+<!--end_{tag}-->
+"""
     try:
         with open(readme_path, 'r') as file:
             file_contents = file.read()
-        modified_contents = file_contents.replace(f"<!--start_{category}-->", new_entry)
+        with open(readme_path, 'r') as file:
+            lines = file.readlines()
+        if entry_exists(tag, lines):
+            print(f"Found existing {table_name}. Will replace it.")
+            # do replacement
+            modified_contents = replace_existing_entry(tag, new_entry, file_contents, lines)
+        else:
+            # create new entry
+            print(f"Haven't found an existing {table_name}. Will create it.")
+            new_entry = f"""<!--start_{category}-->\n\n""" + new_entry
+            modified_contents = file_contents.replace(f"<!--start_{category}-->", new_entry)
         with open(readme_path, 'w') as file:
             file.write(modified_contents)
 
-        print(f'Successfully replaced "<!--start_{category}-->" in {readme_path} for table {table_name}.')
+        print(f'Successfully updated/added {table_name} in {readme_path}.')
 
     except FileNotFoundError:
         print(f'Error: File "{readme_path}" not found.')
