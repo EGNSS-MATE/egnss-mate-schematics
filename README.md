@@ -68,6 +68,7 @@ Parameters of the devices
 ### S_COORDINATE_SYSTEM
 Updated on 2024-02-09, 15:51:04
 
+
 #### Definition
 | Variable | Type | Comment |
 | --- | --- | --- |
@@ -189,6 +190,7 @@ Standardization table for Inertial Solution (INSSOL)
 
 ### S_IMU
 Updated on 2024-02-09, 15:51:05
+
 
 #### Definition
 | Variable | Type | Comment |
@@ -332,6 +334,7 @@ Standardization table for Global Positioning System interference data
 ### S_BALISEREADER
 Updated on 2024-02-09, 15:51:04
 
+
 #### Definition
 | Variable | Type | Comment |
 | --- | --- | --- |
@@ -385,6 +388,7 @@ Standardization table for digital map track as geometry object
 ### S_DM_TRACKPOINT
 Updated on 2024-02-09, 15:51:05
 
+
 #### Definition
 | Variable | Type | Comment |
 | --- | --- | --- |
@@ -416,6 +420,7 @@ Standardization table for digital map track point
 ### S_DM_TRACK
 Updated on 2024-02-09, 15:51:05
 
+
 #### Definition
 | Variable | Type | Comment |
 | --- | --- | --- |
@@ -439,6 +444,7 @@ Standardization table for digital map track
 
 ### S_DM_BALISE
 Updated on 2024-02-09, 15:51:05
+
 
 #### Definition
 | Variable | Type | Comment |
