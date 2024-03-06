@@ -19,7 +19,7 @@ add manual information.
 <!--start_s_vehicle-->
 
 ### S_VEHICLE
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -38,7 +38,7 @@ Vehicle by loclab
 <!--start_s_device-->
 
 ### S_DEVICE
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -66,8 +66,7 @@ Parameters of the devices
 <!--start_s_coordinate_system-->
 
 ### S_COORDINATE_SYSTEM
-Updated on 2024-02-09, 15:51:04
-
+Updated on 2024-03-06, 15:08:06
 
 #### Definition
 | Variable | Type | Comment |
@@ -86,7 +85,7 @@ Definitions of the coordinate systems
 <!--start_s_antenna-->
 
 ### S_ANTENNA
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-03-06, 15:08:06
 
 #### Definition
 | Variable | Type | Comment |
@@ -111,7 +110,7 @@ Relationship between device antenna and train antenna
 <!--start_s_speedometer-->
 
 ### S_SPEEDOMETER
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -134,7 +133,7 @@ Standardization table for Speedometer
 <!--start_s_inssol-->
 
 ### S_INSSOL
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -189,8 +188,7 @@ Standardization table for Inertial Solution (INSSOL)
 <!--start_s_imu-->
 
 ### S_IMU
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -219,7 +217,7 @@ Standardization table for Inertial Measurement Unit (IMU)
 <!--start_s_gnss_sat-->
 
 ### S_GNSS_SAT
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -255,7 +253,7 @@ Standardization table for Global Positioning System satellite information
 <!--start_s_gnss_pvt-->
 
 ### S_GNSS_PVT
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -298,7 +296,7 @@ Standardization table for Global Positioning System position, velocity, time (GN
 <!--start_s_gnss_intf-->
 
 ### S_GNSS_INTF
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -332,8 +330,7 @@ Standardization table for Global Positioning System interference data
 <!--start_s_balisereader-->
 
 ### S_BALISEREADER
-Updated on 2024-02-09, 15:51:04
-
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -361,7 +358,7 @@ Standardization table for balise reader
 <!--start_s_dm_track_linear_element-->
 
 ### S_DM_TRACK_LINEAR_ELEMENT
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -386,8 +383,7 @@ Standardization table for digital map track as geometry object
 <!--start_s_dm_trackpoint-->
 
 ### S_DM_TRACKPOINT
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -418,8 +414,7 @@ Standardization table for digital map track point
 <!--start_s_dm_track-->
 
 ### S_DM_TRACK
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -443,8 +438,7 @@ Standardization table for digital map track
 <!--start_s_dm_balise-->
 
 ### S_DM_BALISE
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -477,7 +471,7 @@ Standardization table for digital map balise
 <!--start_r_track-->
 
 ### R_TRACK
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -513,7 +507,7 @@ Fusion Result - Track Bound Coordinates
 <!--start_r_global-->
 
 ### R_GLOBAL
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
@@ -569,7 +563,7 @@ Fusion Result - Global Coordinates
 <!--start_r_error-->
 
 ### R_ERROR
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-03-06, 15:08:07
 
 #### Definition
 | Variable | Type | Comment |
