@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS TABLE S_GNSS_PVT (
+	DEVICE_ID NUMBER(38,0) COMMENT 'Device identifier',
+	TIMESTAMP_LOCAL TIMESTAMP_NTZ(6) COMMENT 'Local Timestamp',
+	TIMESTAMP_UTC TIMESTAMP_NTZ(6) COMMENT 'Coordinated Universal Time Timestamp',
+	GPS_WEEK NUMBER(4,0) COMMENT 'Global Positioning System week number since 6-Jan-1980',
+	GPS_TOW NUMBER(12,6) COMMENT 'Global Positioning System Time of week [s]',
+	ERROR_CODE NUMBER(38,0) COMMENT 'Error code',
+	NORTH_LV95 NUMBER(10,3) COMMENT 'Coordinate north EPSG:2056 [m]',
+	EAST_LV95 NUMBER(10,3) COMMENT 'Coordinate east EPSG:2056 [m]',
+	HEIGHT_LV95 NUMBER(10,3) COMMENT 'Coordinate height EPSG:2056 [m]',
+	LATITUDE_ETRS89 NUMBER(12,9) COMMENT 'Latitude EPSG:4258 [deg]',
+	LONGITUDE_ETRS89 NUMBER(12,9) COMMENT 'Longitude EPSG:4258 [deg]',
+	ALTITUDE_ETRS89 NUMBER(10,3) COMMENT 'Altitude EPSG:4258 [deg]',
+	STD_DEV_NORTH NUMBER(10,3) COMMENT 'Standard deviation north [m]',
+	STD_DEV_EAST NUMBER(10,3) COMMENT 'Standard deviation east [m]',
+	STD_DEV_HEIGHT NUMBER(10,3) COMMENT 'Standard deviation high [m]',
+	VELOCITY_NORTH NUMBER(6,3) COMMENT 'Velocity nort [m/s]',
+	VELOCITY_EAST NUMBER(6,3) COMMENT 'Velocity east [m/s]',
+	VELOCITY_DOWN NUMBER(6,3) COMMENT 'Velocity down [m/s]',
+	STD_DEV_VELOCITY_NORTH NUMBER(6,3) COMMENT 'Standard deviation Velocity nort [m/s]',
+	STD_DEV_VELOCITY_EAST NUMBER(6,3) COMMENT 'Standard deviation Velocity east [m/s]',
+	STD_DEV_VELOCITY_DOWN NUMBER(6,3) COMMENT 'Standard deviation Velocity down [m/s]',
+	UNDULATION NUMBER(26,18) COMMENT 'Undulation',
+	POS_DILUTION_OF_PRECISION NUMBER(26,18) COMMENT 'Position of dilution of precision',
+	QUALITY NUMBER(38,0) COMMENT 'Quality of PVT',
+	USED_SATS NUMBER(38,0) COMMENT 'Number of satellite vehicles used',
+	TRACKED_SATS NUMBER(38,0) COMMENT 'Number of satellite vehicles tracked',
+	CORRECTION_AGE_RECEIVED NUMBER(9,3) COMMENT 'Duration of the last NTRIP correction [s]',
+	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
+)
+COMMENT='Standardization table for Global Positioning System position, velocity, time (GNSS-PVT)'
+;
