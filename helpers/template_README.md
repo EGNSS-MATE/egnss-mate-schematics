@@ -24,6 +24,10 @@ add manual information.
 
 <!--start_dm-->
 
+## Train Route
+
+<!--start_train-->
+
 ## Fusion Results
 
 <!--start_result-->
