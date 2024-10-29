@@ -19,7 +19,7 @@ add manual information.
 <!--start_s_vehicle-->
 
 ### S_VEHICLE
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -38,7 +38,7 @@ Vehicle by loclab
 <!--start_s_device-->
 
 ### S_DEVICE
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -66,8 +66,7 @@ Parameters of the devices
 <!--start_s_coordinate_system-->
 
 ### S_COORDINATE_SYSTEM
-Updated on 2024-02-09, 15:51:04
-
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -86,7 +85,7 @@ Definitions of the coordinate systems
 <!--start_s_antenna-->
 
 ### S_ANTENNA
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -111,7 +110,7 @@ Relationship between device antenna and train antenna
 <!--start_s_speedometer-->
 
 ### S_SPEEDOMETER
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
@@ -134,7 +133,7 @@ Standardization table for Speedometer
 <!--start_s_inssol-->
 
 ### S_INSSOL
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
@@ -189,8 +188,7 @@ Standardization table for Inertial Solution (INSSOL)
 <!--start_s_imu-->
 
 ### S_IMU
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -219,7 +217,7 @@ Standardization table for Inertial Measurement Unit (IMU)
 <!--start_s_gnss_sat-->
 
 ### S_GNSS_SAT
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -255,7 +253,7 @@ Standardization table for Global Positioning System satellite information
 <!--start_s_gnss_pvt-->
 
 ### S_GNSS_PVT
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -298,7 +296,7 @@ Standardization table for Global Positioning System position, velocity, time (GN
 <!--start_s_gnss_intf-->
 
 ### S_GNSS_INTF
-Updated on 2024-02-09, 15:51:04
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -332,8 +330,7 @@ Standardization table for Global Positioning System interference data
 <!--start_s_balisereader-->
 
 ### S_BALISEREADER
-Updated on 2024-02-09, 15:51:04
-
+Updated on 2024-10-29, 08:35:24
 
 #### Definition
 | Variable | Type | Comment |
@@ -361,7 +358,7 @@ Standardization table for balise reader
 <!--start_s_dm_track_linear_element-->
 
 ### S_DM_TRACK_LINEAR_ELEMENT
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
@@ -386,8 +383,7 @@ Standardization table for digital map track as geometry object
 <!--start_s_dm_trackpoint-->
 
 ### S_DM_TRACKPOINT
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
@@ -418,8 +414,7 @@ Standardization table for digital map track point
 <!--start_s_dm_track-->
 
 ### S_DM_TRACK
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
@@ -443,8 +438,7 @@ Standardization table for digital map track
 <!--start_s_dm_balise-->
 
 ### S_DM_BALISE
-Updated on 2024-02-09, 15:51:05
-
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
@@ -477,24 +471,24 @@ Standardization table for digital map balise
 <!--start_r_track-->
 
 ### R_TRACK
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
 | --- | --- | --- |
 | `ALGORITHM_ID` | VARCHAR(16777216) | Algorithm identifier |
-| `SENSOR_SET` | ARRAY | Array of device_id |
-| `PARAMETER_SET` | OBJECT | Parameter of the algorithm {\"param 1\":value1,...} |
-| `OPERATING_DATE` | DATE | Operating_date |
-| `TRAIN_NUMBER` | NUMBER(38,0) | Train_number |
+| `SENSOR_SET` | ARRAY | Array[int] of device_id |
+| `PARAMETER_SET` | OBJECT | Parameter of the algorithm {\"param 1\":value1,...} as json-formatted string; \"Reference_System\" is mandatory |
+| `OPERATING_DATE` | DATE | Operating Date |
+| `TRAIN_NUMBER` | NUMBER(38,0) | Train Number |
 | `TIMESTAMP_LOCAL` | TIMESTAMP_NTZ(6) | Local Timestamp |
 | `TIMESTAMP_UTC` | TIMESTAMP_NTZ(6) | Coordinated Universal Time Timestamp |
 | `STATUS` | NUMBER(38,0) | Based on status table for Fusion Result,needs to be amended if necessary |
 | `TRACK_ID` | ARRAY | Array with possible track identifiers |
-| `MOVEMENT_DIRECTION` | BOOLEAN | TRUE when driving +x, FALSE when driving -x in body frame |
-| `ORIENTATION` | BOOLEAN | TRUE when body x is towards destination node, False when body x axis is towards origin node |
-| `TRAVELLED_DISTANCE` | NUMBER(10,3) | Travelled distance since start of mission [m] |
-| `RELATIVE_DISTANCE` | NUMBER(10,3) | Relative along track distance to origin node [m] |
+| `MOVEMENT_DIRECTION` | BOOLEAN | Direction of movement; TRUE when driving +x, FALSE when driving -x in body frame |
+| `ORIENTATION` | BOOLEAN | Orientation of vehicle w.r.t. track; TRUE when body x is towards destination node, False when body x axis is towards origin node |
+| `TRAVELLED_DISTANCE` | NUMBER(10,3) | Cumulative, absolute, travelled distance since start of mission [m] |
+| `RELATIVE_DISTANCE` | NUMBER(10,3) | Relative along track distance to origin node of track [m] |
 | `SPEED` | NUMBER(6,3) | Absolute along track speed [m/s] |
 | `ACCELERATION` | NUMBER(6,3) | Change of along track speed [m/s2] |
 | `OVERESTIMATION_DISTANCE` | NUMBER(10,3) | Overestimation of travelled and relative distance [m] |
@@ -513,41 +507,41 @@ Fusion Result - Track Bound Coordinates
 <!--start_r_global-->
 
 ### R_GLOBAL
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
 | --- | --- | --- |
 | `ALGORITHM_ID` | VARCHAR(16777216) | Algorithm identifier |
-| `SENSOR_SET` | ARRAY | Array of device_id |
-| `PARAMETER_SET` | OBJECT | Parameter of the algorithm {\"param 1\":value1,...} |
-| `OPERATING_DATE` | DATE | Operating_date |
-| `TRAIN_NUMBER` | NUMBER(38,0) | Train_number |
+| `SENSOR_SET` | ARRAY | Array[int] of device_id |
+| `PARAMETER_SET` | OBJECT | Parameter of the algorithm {\"param 1\":value1,...} as json-formatted string; \"Reference_System\" is mandatory |
+| `OPERATING_DATE` | DATE | Operating Date |
+| `TRAIN_NUMBER` | NUMBER(38,0) | Train Number |
 | `TIMESTAMP_LOCAL` | TIMESTAMP_NTZ(6) | Local Timestamp |
 | `TIMESTAMP_UTC` | TIMESTAMP_NTZ(6) | Coordinated Universal Time Timestamp |
-| `STATUS` | NUMBER(38,0) | Based on status table for Fusion Result,needs to be amended if necessar |
+| `STATUS` | NUMBER(38,0) | Based on status table for Fusion Result, needs to be amended if necessary |
 | `NORTH_LV95` | NUMBER(10,3) | Coordinate north EPSG:2056 [m] |
 | `EAST_LV95` | NUMBER(10,3) | Coordinate east EPSG:2056 [m] |
 | `HEIGHT_LV95` | NUMBER(10,3) | Coordinate height EPSG:2056 [m] |
 | `LATITUDE_ETRS89` | NUMBER(12,9) | Latitude EPSG:4258 [deg] |
 | `LONGITUDE_ETRS89` | NUMBER(12,9) | Longitude EPSG:4258 [deg] |
 | `ALTITUDE_ETRS89` | NUMBER(10,3) | Altitude EPSG:4258 [m] |
-| `VELOCITY_NORTH` | NUMBER(6,3) | Velocity nort [m/s] |
+| `VELOCITY_NORTH` | NUMBER(6,3) | Velocity north [m/s] |
 | `VELOCITY_EAST` | NUMBER(6,3) | Velocity east [m/s] |
 | `VELOCITY_DOWN` | NUMBER(6,3) | Velocity down [m/s] |
-| `ACC_X` | NUMBER(8,5) | Acceleration x [m/s2] |
-| `ACC_Y` | NUMBER(8,5) | Acceleration y [m/s2] |
-| `ACC_Z` | NUMBER(8,5) | Acceleration z [m/s2] |
-| `ROLL` | NUMBER(7,6) | Roll [rad] |
-| `PITCH` | NUMBER(7,6) | Pitch [rad] |
-| `YAW` | NUMBER(7,6) | Yaw [rad] |
-| `ANG_RATE_X` | NUMBER(8,6) | Angular rate x [rad/s] |
-| `ANG_RATE_Y` | NUMBER(8,6) | Angular rate y [rad/s] |
-| `ANG_RATE_Z` | NUMBER(8,6) | Angular rate z [rad/s] |
+| `ACC_X` | NUMBER(8,5) | Acceleration x [m/s2] in body frame |
+| `ACC_Y` | NUMBER(8,5) | Acceleration y [m/s2] in body frame |
+| `ACC_Z` | NUMBER(8,5) | Acceleration z [m/s2] in body frame |
+| `ROLL` | NUMBER(7,6) | Roll [rad] of extrinsic Euler angles RPY representing the rotational part of transformation from body frame to NED or ENU (project specific) |
+| `PITCH` | NUMBER(7,6) | Pitch [rad] of extrinsic Euler angles RPY representing the rotational part of transformation from body frame to NED or ENU (project specific) |
+| `YAW` | NUMBER(7,6) | Yaw [rad] of extrinsic Euler angles RPY representing the rotational part of transformation from body frame to NED or ENU (project specific) |
+| `ANG_RATE_X` | NUMBER(8,6) | Angular rate x [rad/s] in body frame |
+| `ANG_RATE_Y` | NUMBER(8,6) | Angular rate y [rad/s] in body frame |
+| `ANG_RATE_Z` | NUMBER(8,6) | Angular rate z [rad/s] in body frame |
 | `STD_DEV_NORTH` | NUMBER(10,3) | Standard deviation north [m] |
 | `STD_DEV_EAST` | NUMBER(10,3) | Standard deviation east [m] |
 | `STD_DEV_HEIGHT` | NUMBER(10,3) | Standard deviation height [m] |
-| `STD_DEV_VELOCITY_NORTH` | NUMBER(6,3) | Standard deviation velocity nort [m/s] |
+| `STD_DEV_VELOCITY_NORTH` | NUMBER(6,3) | Standard deviation velocity north [m/s] |
 | `STD_DEV_VELOCITY_EAST` | NUMBER(6,3) | Standard deviation velocity east [m/s] |
 | `STD_DEV_VELOCITY_DOWN` | NUMBER(6,3) | Standard deviation velocity down [m/s] |
 | `STD_DEV_ROLL` | NUMBER(8,6) | Standard deviation roll [rad] |
@@ -569,7 +563,7 @@ Fusion Result - Global Coordinates
 <!--start_r_error-->
 
 ### R_ERROR
-Updated on 2024-02-09, 15:51:05
+Updated on 2024-10-29, 08:35:25
 
 #### Definition
 | Variable | Type | Comment |
