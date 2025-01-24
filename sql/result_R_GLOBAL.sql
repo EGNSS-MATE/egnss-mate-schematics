@@ -39,7 +39,10 @@ CREATE TABLE IF NOT EXISTS TABLE R_GLOBAL (
 	SPEED NUMBER(6,3) COMMENT 'Absolute along track speed [m/s]',
 	STD_DEV_SPEED NUMBER(6,3) COMMENT 'Standard deviation speed [m/s]',
 	MOVEMENT_DIRECTION BOOLEAN COMMENT 'TRUE when driving +x, FALSE when driving -x in body frame',
-	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation'
+	CREATED_TIMESTAMP TIMESTAMP_NTZ(6) COMMENT 'Timestamp of the row creation',
+	VELOCITY_X NUMBER(6,3) COMMENT 'Velocity x in body frame [m/s]',
+	VELOCITY_Y NUMBER(6,3) COMMENT 'Velocity y in body frame [m/s]',
+	VELOCITY_Z NUMBER(6,3) COMMENT 'Velocity z in body frame [m/s]'
 )
 COMMENT='Fusion Result - Global Coordinates'
 ;
