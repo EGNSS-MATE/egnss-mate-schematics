@@ -19,8 +19,7 @@ add manual information.
 <!--start_s_vehicle-->
 
 ### S_VEHICLE
-
-Updated on 2024-10-29, 08:35:24
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -39,8 +38,7 @@ Vehicle by loclab
 <!--start_s_device-->
 
 ### S_DEVICE
-
-Updated on 2024-10-29, 08:35:24
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -60,7 +58,6 @@ Updated on 2024-10-29, 08:35:24
 | `COMMENT` | VARCHAR(16777216) | Comment |
 
 #### Comment
-
 Parameters of the devices
 
 <!--end_s_device-->
@@ -69,8 +66,7 @@ Parameters of the devices
 <!--start_s_coordinate_system-->
 
 ### S_COORDINATE_SYSTEM
-Updated on 2024-10-29, 08:35:24
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -89,9 +85,7 @@ Definitions of the coordinate systems
 <!--start_s_antenna-->
 
 ### S_ANTENNA
-
-Updated on 2024-10-29, 08:35:24
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -116,9 +110,7 @@ Relationship between device antenna and train antenna
 <!--start_s_speedometer-->
 
 ### S_SPEEDOMETER
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -141,8 +133,7 @@ Standardization table for Speedometer
 <!--start_s_inssol-->
 
 ### S_INSSOL
-
-Updated on 2024-10-29, 08:35:25
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -197,9 +188,7 @@ Standardization table for Inertial Solution (INSSOL)
 <!--start_s_imu-->
 
 ### S_IMU
-
-Updated on 2024-10-29, 08:35:24
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -228,9 +217,7 @@ Standardization table for Inertial Measurement Unit (IMU)
 <!--start_s_gnss_sat-->
 
 ### S_GNSS_SAT
-
-Updated on 2024-10-29, 08:35:24
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -266,9 +253,7 @@ Standardization table for Global Positioning System satellite information
 <!--start_s_gnss_pvt-->
 
 ### S_GNSS_PVT
-
-Updated on 2024-10-29, 08:35:24
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -311,8 +296,7 @@ Standardization table for Global Positioning System position, velocity, time (GN
 <!--start_s_gnss_intf-->
 
 ### S_GNSS_INTF
-
-Updated on 2024-10-29, 08:35:24
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -346,9 +330,7 @@ Standardization table for Global Positioning System interference data
 <!--start_s_balisereader-->
 
 ### S_BALISEREADER
-
-Updated on 2024-10-29, 08:35:24
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -376,9 +358,7 @@ Standardization table for balise reader
 <!--start_s_dm_track_linear_element-->
 
 ### S_DM_TRACK_LINEAR_ELEMENT
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -403,9 +383,7 @@ Standardization table for digital map track as geometry object
 <!--start_s_dm_trackpoint-->
 
 ### S_DM_TRACKPOINT
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -436,9 +414,7 @@ Standardization table for digital map track point
 <!--start_s_dm_track-->
 
 ### S_DM_TRACK
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -462,9 +438,7 @@ Standardization table for digital map track
 <!--start_s_dm_balise-->
 
 ### S_DM_BALISE
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -474,6 +448,8 @@ Updated on 2024-10-29, 08:35:25
 | `N_PIG` | NUMBER(38,0) | Eurobalise Position in Group ID  based on ETCS Subset 26 |
 | `N_TOTAL` | NUMBER(38,0) | Total number of balise(s) in the group |
 | `TRACK_EDGE_ID` | VARCHAR(16777216) | Reference to track edge where the balise is located on |
+| `BALISE_TYPE` | VARCHAR(16777216) | Type of balise |
+| `SLEEPER_TYPE` | VARCHAR(16777216) | Type of sleeper |
 | `POSITION` | NUMBER(10,3) | Distance from start of track edge to balise |
 | `CROSS_DISTANCE` | NUMBER(10,3) | Distance from the balise to middle of the track |
 | `NORTH_LV95` | NUMBER(10,3) | Coordinate north EPSG:2056 [m] |
@@ -490,6 +466,66 @@ Standardization table for digital map balise
 <!--end_s_dm_balise-->
 
 
+## Train Route
+
+<!--start_train-->
+
+<!--start_s_train_route_linear_element-->
+
+### S_TRAIN_ROUTE_LINEAR_ELEMENT
+Updated on 2025-01-24, 13:19:29
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `OPERATING_DATE` | DATE | Operating_date |
+| `TRAIN_NUMBER` | NUMBER(38,0) | Train_number |
+| `NUMBER_OF_TRACKS` | NUMBER(38,0) | Number of tracks |
+| `LIST_TRACK_ID` | ARRAY | List with the track edge identifier |
+| `LIST_TRACK_LENGTH` | ARRAY | List with the track edge length (the true arc len) [m] |
+| `LIST_POSITION_AT_TRACK_START` | ARRAY | List with the track position at the start from the route [m] |
+| `LIST_POSITION_AT_TRACK_END` | ARRAY | List with the track position at the end from the route [m] |
+| `GAP` | BOOLEAN | True if the route contains gaps |
+| `LIST_GAP_BEFORE` | ARRAY | List with interruption indicator before the track |
+| `LIST_GAP_AFTER` | ARRAY | List with interruption indicator after the track |
+| `TURNAROUND` | BOOLEAN | True if the route contains turnarounds |
+| `LIST_TURNAROUND_TRACK` | ARRAY | List with train turnarounds indicator on the track |
+| `ROUTE_LENGTH` | NUMBER(10,3) | Total length (the true arc len) of the track route [m] |
+| `GEOMETRY_LENGTH` | NUMBER(10,3) | Length of the geometry object [m] |
+| `WKT_LV95` | VARCHAR(16777216) | WKT (Well-known text) object as a mulitlinestring of the track route EPSG:2056 [m] |
+| `GEOMETRY_LV95` | GEOMETRY | Geometry object as a mulitlinestring of the track route EPSG:2056 [m] |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for digital map track as geometry object
+
+<!--end_s_train_route_linear_element-->
+
+
+<!--start_s_train_route-->
+
+### S_TRAIN_ROUTE
+Updated on 2025-01-24, 13:19:28
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `OPERATING_DATE` | DATE | Operating_date |
+| `TRAIN_NUMBER` | NUMBER(38,0) | Train_number |
+| `UIC` | VARCHAR(16777216) | International union of railways unique number of vehicle |
+| `ROUTE_START_TIME` | TIMESTAMP_NTZ(6) | Start time route |
+| `ROUTE_END_TIME` | TIMESTAMP_NTZ(6) | End time on route |
+| `TRACK_EDGE_ORDER` | NUMBER(38,0) | Order of track edge on route |
+| `TRACK_EDGE_ID` | VARCHAR(16777216) | Reference to track edge |
+| `TRAIN_TRACK_ORIENTATION` | NUMBER(38,0) | Direction of train travel to the track edge direction (1=in the same direction, -1=against the track direction) |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for train route
+
+<!--end_s_train_route-->
+
+
 ## Fusion Results
 
 <!--start_result-->
@@ -497,9 +533,7 @@ Standardization table for digital map balise
 <!--start_r_track-->
 
 ### R_TRACK
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -535,9 +569,7 @@ Fusion Result - Track Bound Coordinates
 <!--start_r_global-->
 
 ### R_GLOBAL
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
@@ -583,6 +615,9 @@ Updated on 2024-10-29, 08:35:25
 | `STD_DEV_SPEED` | NUMBER(6,3) | Standard deviation speed [m/s] |
 | `MOVEMENT_DIRECTION` | BOOLEAN | TRUE when driving +x, FALSE when driving -x in body frame |
 | `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+| `VELOCITY_X` | NUMBER(6,3) | Velocity x in body frame [m/s] |
+| `VELOCITY_Y` | NUMBER(6,3) | Velocity y in body frame [m/s] |
+| `VELOCITY_Z` | NUMBER(6,3) | Velocity z in body frame [m/s] |
 
 #### Comment
 Fusion Result - Global Coordinates
@@ -593,9 +628,7 @@ Fusion Result - Global Coordinates
 <!--start_r_error-->
 
 ### R_ERROR
-
-Updated on 2024-10-29, 08:35:25
-
+Updated on 2025-01-24, 13:19:28
 
 #### Definition
 | Variable | Type | Comment |
