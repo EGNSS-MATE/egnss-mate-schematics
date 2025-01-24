@@ -4,6 +4,8 @@ CREATE TABLE IF NOT EXISTS TABLE S_DM_BALISE (
 	N_PIG NUMBER(38,0) COMMENT 'Eurobalise Position in Group ID  based on ETCS Subset 26',
 	N_TOTAL NUMBER(38,0) COMMENT 'Total number of balise(s) in the group',
 	TRACK_EDGE_ID VARCHAR(16777216) COMMENT 'Reference to track edge where the balise is located on',
+	BALISE_TYPE VARCHAR(16777216) COMMENT 'Type of balise',
+	SLEEPER_TYPE VARCHAR(16777216) COMMENT 'Type of sleeper',
 	POSITION NUMBER(10,3) COMMENT 'Distance from start of track edge to balise',
 	CROSS_DISTANCE NUMBER(10,3) COMMENT 'Distance from the balise to middle of the track',
 	NORTH_LV95 NUMBER(10,3) COMMENT 'Coordinate north EPSG:2056 [m]',
