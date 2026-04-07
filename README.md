@@ -19,7 +19,7 @@ add manual information.
 <!--start_s_vehicle-->
 
 ### S_VEHICLE
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -38,7 +38,7 @@ Vehicle by loclab
 <!--start_s_device-->
 
 ### S_DEVICE
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -54,7 +54,9 @@ Updated on 2025-01-24, 13:19:28
 | `VALID_TO` | TIMESTAMP_NTZ(6) | UTC date valid to |
 | `QUATERNION` | OBJECT | Unit quaternions [a b c w] to boogie frame C1 and C2 |
 | `TRANSLATION` | OBJECT | Translation [x y z] to boogie frame C1 and C2 |
+| `ADDITIONAL_PARAMS` | OBJECT | Additional parameters of the device {\"unit\": \"mm\",...} |
 | `COORD_SYSTEM_NAME` | VARCHAR(16777216) | Name of the coordinate reference system referenced to s_coordinate_system |
+| `MONITORING` | BOOLEAN | Should this be taken in the monitor process |
 | `COMMENT` | VARCHAR(16777216) | Comment |
 
 #### Comment
@@ -66,7 +68,7 @@ Parameters of the devices
 <!--start_s_coordinate_system-->
 
 ### S_COORDINATE_SYSTEM
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -85,7 +87,7 @@ Definitions of the coordinate systems
 <!--start_s_antenna-->
 
 ### S_ANTENNA
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -110,7 +112,7 @@ Relationship between device antenna and train antenna
 <!--start_s_speedometer-->
 
 ### S_SPEEDOMETER
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -133,7 +135,7 @@ Standardization table for Speedometer
 <!--start_s_inssol-->
 
 ### S_INSSOL
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -188,7 +190,7 @@ Standardization table for Inertial Solution (INSSOL)
 <!--start_s_imu-->
 
 ### S_IMU
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -217,7 +219,7 @@ Standardization table for Inertial Measurement Unit (IMU)
 <!--start_s_gnss_sat-->
 
 ### S_GNSS_SAT
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -253,7 +255,7 @@ Standardization table for Global Positioning System satellite information
 <!--start_s_gnss_pvt-->
 
 ### S_GNSS_PVT
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -296,7 +298,7 @@ Standardization table for Global Positioning System position, velocity, time (GN
 <!--start_s_gnss_intf-->
 
 ### S_GNSS_INTF
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -327,10 +329,38 @@ Standardization table for Global Positioning System interference data
 <!--end_s_gnss_intf-->
 
 
+<!--start_s_gnss_attitude-->
+
+### S_GNSS_ATTITUDE
+Updated on 2026-04-07, 06:31:59
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `DEVICE_ID` | NUMBER(38,0) | Device identifier |
+| `TIMESTAMP_LOCAL` | TIMESTAMP_NTZ(6) | Local Timestamp |
+| `TIMESTAMP_UTC` | TIMESTAMP_NTZ(6) | Coordinated Universal Time Timestamp |
+| `GPS_WEEK` | NUMBER(4,0) | Global Positioning System week number since 6-Jan-1980 |
+| `GPS_TOW` | NUMBER(12,6) | Global Positioning System Time of week [s] |
+| `ERROR_CODE` | NUMBER(38,0) | Error code |
+| `ROLL` | NUMBER(7,6) | Roll [rad] |
+| `PITCH` | NUMBER(7,6) | Pitch [rad] |
+| `YAW` | NUMBER(7,6) | Yaw [rad] |
+| `STD_DEV_ROLL` | NUMBER(8,6) | Standard deviation roll [rad] |
+| `STD_DEV_PITCH` | NUMBER(8,6) | Standard deviation pitch [rad] |
+| `STD_DEV_YAW` | NUMBER(8,6) | Standard deviation yaw [rad] |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for Global Positioning System Attitude
+
+<!--end_s_gnss_attitude-->
+
+
 <!--start_s_balisereader-->
 
 ### S_BALISEREADER
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -355,10 +385,115 @@ Standardization table for balise reader
 
 <!--start_dm-->
 
+<!--start_s_dm_track_segment_position-->
+
+### S_DM_TRACK_SEGMENT_POSITION
+Updated on 2026-04-07, 06:32:00
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `TRACK_EDGE_ID` | VARCHAR(16777216) | Reference to track edge |
+| `TRACK_SEGMENT_TYPE` | VARCHAR(16777216) | Type of curve [line, circle, clothoid] |
+| `TRACK_SEGMENT_REFERENCE_POSITION` | NUMBER(10,3) | Distance from track edge start node to track segment start [m] |
+| `TRACK_SEGMENT_LENGTH` | NUMBER(10,3) | Length of track segment [m] |
+| `TRACK_SEGMENT_DIRECTION` | NUMBER(38,0) | Direction from the segment to the track edge (1=in the same direction, -1=against the track direction) |
+| `UTM_CELL` | VARCHAR(16777216) | UTM cell; for Swiss applications LV95 |
+| `NORTH` | NUMBER(10,3) | Starting point for line, center point for circle and clothoid; North coordinate in Cartesian coordinate system w.r.t. UTM cell [m] |
+| `EAST` | NUMBER(10,3) | Starting point for line, center point for circle and clothoid; East coordinate in Cartesian coordinate system w.r.t. UTM cell [m] |
+| `AZIMUTH` | NUMBER(7,6) | Azimuth for line, initial azimuth for clothoid in radians; between north and line/orientation of clothoid center [rad] |
+| `INITIAL_ARC_LENGTH` | NUMBER(10,3) | Initial arc length for circle and clothoid in meters; distance from north pole of the circle/center point of clothoid to starting point [m] |
+| `RADIUS` | NUMBER(12,3) | Signed radius of circle [m] |
+| `CLOTHOID_CONSTANT` | NUMBER(38,30) | Parameter describing the change of radius over the arc length of the clothoid [m] |
+| `VALID_FROM` | TIMESTAMP_NTZ(6) | Local date valid from |
+| `VALID_TO` | TIMESTAMP_NTZ(6) | Local valid to |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for digital map track segment position
+
+<!--end_s_dm_track_segment_position-->
+
+
+<!--start_s_dm_track_segment_gradient-->
+
+### S_DM_TRACK_SEGMENT_GRADIENT
+Updated on 2026-04-07, 06:31:59
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `TRACK_EDGE_ID` | VARCHAR(16777216) | Reference to track edge |
+| `TRACK_SEGMENT_TYPE` | VARCHAR(16777216) | Type of curve [line, circle] |
+| `TRACK_SEGMENT_REFERENCE_POSITION` | NUMBER(10,3) | Distance from track edge start node to track segment start [m] |
+| `TRACK_SEGMENT_LENGTH` | NUMBER(10,3) | Length of track segment [m] |
+| `TRACK_SEGMENT_DIRECTION` | NUMBER(38,0) | Direction from the segment to the track edge (1=in the same direction, -1=against the track direction) |
+| `INITIAL_HEIGHT` | NUMBER(10,3) | Starting altitude/initial height w.r.t. reference ellipsoid GRS80 of line and circle; altitude at starting point [m] |
+| `GRADIENT` | NUMBER(6,3) | Gradient of line and initial gradient angle of circle; inclination of track for line/angle between north-east plane and track at at starting point for circle; inclination of track for line/angle between north-east plane and track at at starting point for circle [‰] |
+| `RADIUS` | NUMBER(10,3) | Signed radius of circle; positive radius for center point above track, negative for center point below track [m] |
+| `VALID_FROM` | TIMESTAMP_NTZ(6) | Local date valid from |
+| `VALID_TO` | TIMESTAMP_NTZ(6) | Local valid to |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for digital map track segement gradient
+
+<!--end_s_dm_track_segment_gradient-->
+
+
+<!--start_s_dm_track_segment_cant-->
+
+### S_DM_TRACK_SEGMENT_CANT
+Updated on 2026-04-07, 06:31:59
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `TRACK_EDGE_ID` | VARCHAR(16777216) | Reference to track edge |
+| `TRACK_SEGMENT_TYPE` | VARCHAR(16777216) | Type of curve [line] |
+| `TRACK_SEGMENT_REFERENCE_POSITION` | NUMBER(10,3) | Distance from track edge start node to track segment start [m] |
+| `TRACK_SEGMENT_LENGTH` | NUMBER(10,3) | Length of track segment [m] |
+| `TRACK_SEGMENT_DIRECTION` | NUMBER(38,0) | Direction from the segment to the track edge (1=in the same direction, -1=against the track direction) |
+| `INITIAL_CANT` | NUMBER(6,3) | Cant at start of line segment [m] |
+| `END_CANT` | NUMBER(6,3) | Cant at end of line segment [m] |
+| `TRACK_GAUGE` | NUMBER(7,3) | Distance between center of the running surface of both rails of line [m] |
+| `VALID_FROM` | TIMESTAMP_NTZ(6) | Local date valid from |
+| `VALID_TO` | TIMESTAMP_NTZ(6) | Local valid to |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for digital map track segment cant
+
+<!--end_s_dm_track_segment_cant-->
+
+
+<!--start_s_dm_track_relation-->
+
+### S_DM_TRACK_RELATION
+Updated on 2026-04-07, 06:31:59
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `TRACK_EDGE_ID` | VARCHAR(16777216) | Unique identifier of track edge |
+| `LIST_PREV_TRACK` | ARRAY | Previous track edges as {\"track_edge_id\":value,\"trafficable\":value} as json-formatted string |
+| `COUNT_PREV_TRACK` | NUMBER(38,0) | Number of previous tracks |
+| `LIST_NEXT_TRACK` | ARRAY | Following track edges as {\"track_edge_id\":value,\"trafficable\":value} as json-formatted string |
+| `COUNT_NEXT_TRACK` | NUMBER(38,0) | Number of following tracks |
+| `VALID_FROM` | TIMESTAMP_NTZ(6) | Local date valid from |
+| `VALID_TO` | TIMESTAMP_NTZ(6) | Local valid to |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for track relation
+
+<!--end_s_dm_track_relation-->
+
+
 <!--start_s_dm_track_linear_element-->
 
 ### S_DM_TRACK_LINEAR_ELEMENT
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -383,7 +518,7 @@ Standardization table for digital map track as geometry object
 <!--start_s_dm_trackpoint-->
 
 ### S_DM_TRACKPOINT
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -414,7 +549,7 @@ Standardization table for digital map track point
 <!--start_s_dm_track-->
 
 ### S_DM_TRACK
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -435,10 +570,39 @@ Standardization table for digital map track
 <!--end_s_dm_track-->
 
 
+<!--start_s_dm_node-->
+
+### S_DM_NODE
+Updated on 2026-04-07, 06:31:59
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `NODE_ID` | VARCHAR(16777216) | Unique identifier of node |
+| `NODE_NAME` | VARCHAR(16777216) | Name of node |
+| `OPERATING_POINT` | VARCHAR(16777216) | Name of operating point |
+| `SWITCH` | VARCHAR(16777216) | Name of the switch |
+| `SWITCH_POINT` | VARCHAR(16777216) | Name of the switch point |
+| `NORTH_LV95` | NUMBER(10,3) | Coordinate north EPSG:2056 [m] |
+| `EAST_LV95` | NUMBER(10,3) | Coordinate east EPSG:2056 [m] |
+| `HEIGHT_LV95` | NUMBER(10,3) | Coordinate height EPSG:2056 [m] |
+| `LATITUDE_ETRS89` | NUMBER(12,9) | Latitude EPSG:4258 [deg] |
+| `LONGITUDE_ETRS89` | NUMBER(12,9) | Longitude EPSG:4258 [deg] |
+| `ALTITUDE_ETRS89` | NUMBER(10,3) | Altitude EPSG:4258 [deg] |
+| `VALID_FROM` | TIMESTAMP_NTZ(6) | Local date valid from |
+| `VALID_TO` | TIMESTAMP_NTZ(6) | Local valid to |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Standardization table for track node
+
+<!--end_s_dm_node-->
+
+
 <!--start_s_dm_balise-->
 
 ### S_DM_BALISE
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:31:59
 
 #### Definition
 | Variable | Type | Comment |
@@ -473,7 +637,7 @@ Standardization table for digital map balise
 <!--start_s_train_route_linear_element-->
 
 ### S_TRAIN_ROUTE_LINEAR_ELEMENT
-Updated on 2025-01-24, 13:19:29
+Updated on 2026-04-07, 06:32:00
 
 #### Definition
 | Variable | Type | Comment |
@@ -505,7 +669,7 @@ Standardization table for digital map track as geometry object
 <!--start_s_train_route-->
 
 ### S_TRAIN_ROUTE
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:32:00
 
 #### Definition
 | Variable | Type | Comment |
@@ -526,6 +690,29 @@ Standardization table for train route
 <!--end_s_train_route-->
 
 
+<!--start_s_train-->
+
+### S_TRAIN
+Updated on 2026-04-07, 06:32:00
+
+#### Definition
+| Variable | Type | Comment |
+| --- | --- | --- |
+| `OPERATING_DATE` | DATE | Operating_date |
+| `TRAIN_NUMBER` | NUMBER(38,0) | Train_number |
+| `UIC` | VARCHAR(16777216) | International UNION of railways unique number of vehicle |
+| `ROUTE_START_TIME` | TIMESTAMP_NTZ(6) | Start time ON route |
+| `ROUTE_END_TIME` | TIMESTAMP_NTZ(6) | End time ON route |
+| `DURATION` | VARCHAR(16777216) | Duration of the train journey |
+| `ROUTE` | VARCHAR(16777216) | Route of the train journey |
+| `CREATED_TIMESTAMP` | TIMESTAMP_NTZ(6) | Timestamp of the row creation |
+
+#### Comment
+Train journey summary
+
+<!--end_s_train-->
+
+
 ## Fusion Results
 
 <!--start_result-->
@@ -533,7 +720,7 @@ Standardization table for train route
 <!--start_r_track-->
 
 ### R_TRACK
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:32:00
 
 #### Definition
 | Variable | Type | Comment |
@@ -569,7 +756,7 @@ Fusion Result - Track Bound Coordinates
 <!--start_r_global-->
 
 ### R_GLOBAL
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:32:00
 
 #### Definition
 | Variable | Type | Comment |
@@ -628,7 +815,7 @@ Fusion Result - Global Coordinates
 <!--start_r_error-->
 
 ### R_ERROR
-Updated on 2025-01-24, 13:19:28
+Updated on 2026-04-07, 06:32:00
 
 #### Definition
 | Variable | Type | Comment |
