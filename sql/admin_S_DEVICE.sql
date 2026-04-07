@@ -10,7 +10,9 @@ CREATE TABLE IF NOT EXISTS TABLE S_DEVICE (
 	VALID_TO TIMESTAMP_NTZ(6) COMMENT 'UTC date valid to',
 	QUATERNION OBJECT COMMENT 'Unit quaternions [a b c w] to boogie frame C1 and C2',
 	TRANSLATION OBJECT COMMENT 'Translation [x y z] to boogie frame C1 and C2',
+	ADDITIONAL_PARAMS OBJECT COMMENT 'Additional parameters of the device {\"unit\": \"mm\",...}',
 	COORD_SYSTEM_NAME VARCHAR(16777216) COMMENT 'Name of the coordinate reference system referenced to s_coordinate_system',
+	MONITORING BOOLEAN COMMENT 'Should this be taken in the monitor process',
 	COMMENT VARCHAR(16777216) COMMENT 'Comment'
 )
 COMMENT='Parameters of the devices'
