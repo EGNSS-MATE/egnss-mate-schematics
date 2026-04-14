@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS TABLE R_TRACK (
+CREATE TABLE IF NOT EXISTS R_TRACK (
 	ALGORITHM_ID VARCHAR(16777216) COMMENT 'Algorithm identifier',
 	SENSOR_SET ARRAY COMMENT 'Array[int] of device_id',
 	PARAMETER_SET OBJECT COMMENT 'Parameter of the algorithm {\"param 1\":value1,...} as json-formatted string; \"Reference_System\" is mandatory',

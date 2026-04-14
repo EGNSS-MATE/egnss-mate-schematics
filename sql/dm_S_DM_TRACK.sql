@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS TABLE S_DM_TRACK (
+CREATE TABLE IF NOT EXISTS S_DM_TRACK (
 	TRACK_EDGE_ID VARCHAR(16777216) COMMENT 'Unique identifier of track edge',
 	TRACK_EDGE_NAME VARCHAR(16777216) COMMENT 'Unique name of track edge',
 	FROM_NODE_ID NUMBER(38,0) COMMENT 'Unique number identifier of start node of track edge',

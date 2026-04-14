@@ -23,7 +23,7 @@ def get_table_from_sql(sql_path: str) -> tuple:
     for i in range(len(lines)):
         curr_line = lines[i].strip()
         if i == 0:
-            name = curr_line.split("CREATE TABLE IF NOT EXISTS TABLE ")[-1][:-2]
+            name = curr_line.split("CREATE TABLE IF NOT EXISTS ")[-1][:-2]
         if 0 < i < len(lines) - 3:
             cols.append(get_table_entry(curr_line))
         if i == len(lines) - 2:
