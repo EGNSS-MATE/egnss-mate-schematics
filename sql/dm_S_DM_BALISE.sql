@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS TABLE S_DM_BALISE (
+CREATE TABLE IF NOT EXISTS S_DM_BALISE (
 	NID_C NUMBER(38,0) COMMENT 'Eurobalise Country Codecode  based on ETCS Subset 26',
 	NID_BG NUMBER(38,0) COMMENT 'Eurobalise Balise Group ID  based on ETCS Subset 26',
 	N_PIG NUMBER(38,0) COMMENT 'Eurobalise Position in Group ID  based on ETCS Subset 26',

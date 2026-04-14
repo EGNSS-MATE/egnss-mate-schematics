@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS TABLE S_DM_TRACK_RELATION (
+CREATE TABLE IF NOT EXISTS S_DM_TRACK_RELATION (
 	TRACK_EDGE_ID VARCHAR(16777216) COMMENT 'Unique identifier of track edge',
 	LIST_PREV_TRACK ARRAY COMMENT 'Previous track edges as {\"track_edge_id\":value,\"trafficable\":value} as json-formatted string',
 	COUNT_PREV_TRACK NUMBER(38,0) COMMENT 'Number of previous tracks',
